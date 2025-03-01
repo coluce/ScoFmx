@@ -1,9 +1,9 @@
 {
 	"name": "ScoFmx",
-	"description": "",
+	"description": "Sco Componentes Fmx",
 	"version": "1.0.0",
 	"homepage": "",
-	"mainsrc": "./src",
+	"mainsrc": "./",
 	"projects": [],
 	"dependencies": {}
 }
