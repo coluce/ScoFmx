@@ -1,0 +1,90 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 277
+  ClientWidth = 464
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  DesignerMasterStyle = 0
+  object StatusBar1: TStatusBar
+    Position.Y = 255.000000000000000000
+    ShowSizeGrip = True
+    Size.Width = 464.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object Label1: TLabel
+      Align = Left
+      Margins.Left = 8.000000000000000000
+      Position.X = 8.000000000000000000
+      Size.Width = 185.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Trimming = None
+      Text = 'Label1'
+      TabOrder = 0
+    end
+  end
+  object Panel1: TPanel
+    Align = Top
+    Padding.Left = 8.000000000000000000
+    Padding.Top = 8.000000000000000000
+    Padding.Right = 8.000000000000000000
+    Padding.Bottom = 8.000000000000000000
+    Size.Width = 464.000000000000000000
+    Size.Height = 41.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    object ButtonFillData: TButton
+      Align = Left
+      Position.X = 8.000000000000000000
+      Position.Y = 8.000000000000000000
+      Size.Width = 80.000000000000000000
+      Size.Height = 25.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      Text = 'Fill Data'
+      TextSettings.Trimming = None
+      OnClick = ButtonFillDataClick
+    end
+    object EditFilter: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      Align = Client
+      TabOrder = 2
+      Size.Width = 234.000000000000000000
+      Size.Height = 25.000000000000000000
+      Size.PlatformDefault = False
+      TextPrompt = '<filtrar>'
+      OnTyping = EditFilterTyping
+    end
+    object Button1: TButton
+      Align = Left
+      Position.X = 88.000000000000000000
+      Position.Y = 8.000000000000000000
+      Size.Width = 26.000000000000000000
+      Size.Height = 25.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 4
+      Text = #10133
+      TextSettings.Trimming = None
+      OnClick = Button1Click
+    end
+    object ComboBoxFilter: TComboBox
+      Align = Left
+      Items.Strings = (
+        'Item 1'
+        'Item 2')
+      Margins.Left = 8.000000000000000000
+      Position.X = 122.000000000000000000
+      Position.Y = 8.000000000000000000
+      Size.Width = 100.000000000000000000
+      Size.Height = 25.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 3
+    end
+  end
+end
