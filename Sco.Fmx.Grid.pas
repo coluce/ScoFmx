@@ -60,6 +60,8 @@ type
     procedure CreatePopUpColumn(AInfo: TScoColumnInfo);
     procedure CreateProgressColumn(AInfo: TScoColumnInfo);
     procedure CreateTextColumn(AInfo: TScoColumnInfo);
+    procedure CreateDateTimeColumn(AInfo: TScoColumnInfo);
+    procedure CreateCurrencyColumn(AInfo: TScoColumnInfo);
   public
     constructor Create(const AOwner: TScoFmxGrid<T>);
     destructor Destroy; override;
@@ -646,6 +648,28 @@ begin
   FOwner.AddObject(LColumn);
 end;
 
+procedure TMyGridColumnsInfo<T>.CreateDateTimeColumn(AInfo: TScoColumnInfo);
+var
+  LColumn: TDateTimeColumn;
+begin
+  LColumn := TDateTimeColumn.Create(FOwner);
+  LColumn.Header := AInfo.Header;
+  LColumn.TagString := AInfo.Id;
+  LColumn.Width := AInfo.Width;
+  FOwner.AddObject(LColumn);
+end;
+
+procedure TMyGridColumnsInfo<T>.CreateCurrencyColumn(AInfo: TScoColumnInfo);
+var
+  LColumn: TCurrencyColumn;
+begin
+  LColumn := TCurrencyColumn.Create(FOwner);
+  LColumn.Header := AInfo.Header;
+  LColumn.TagString := AInfo.Id;
+  LColumn.Width := AInfo.Width;
+  FOwner.AddObject(LColumn);
+end;
+
 procedure TMyGridColumnsInfo<T>.Build;
 var
   LInfo: TScoColumnInfo;
@@ -683,8 +707,8 @@ begin
           Progress: CreateProgressColumn(LInfo);
           PopUp: CreatePopUpColumn(LInfo);
           IntegerNumber: CreateIntegerColumn(LInfo);
-          DateTime: raise Exception.Create('Coluna de Data não implementada!');
-          Currency: raise Exception.Create('Coluna de Valor Monetário não implementada!');
+          DateTime: CreateDateTimeColumn(LInfo);
+          Currency: CreateCurrencyColumn(LInfo);
           Float: raise Exception.Create('Coluna de Ponto Flutuante não implementada!');
           Image: raise Exception.Create('Coluna de Imagem não implementada!');
         end;

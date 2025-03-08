@@ -153,7 +153,8 @@ begin
   Result.Progress := Random(99);
   Result.Kind := FKinds[RandomRange(1, 5)];
   Result.Age := Random(150);
-
+  Result.Date := Now + RandomRange(-5, 5);
+  Result.Value := RandomRange(-5, 95);
   FPersons.Add(Result);
 end;
 
@@ -226,6 +227,28 @@ begin
     'Idade',
     'Age',
     70,
+    EmptyStr
+  );
+  ComboBoxFilter.Items.Add(LColumnInfo.FieldName);
+  FGrid.ColumnsInfo.Add(LColumnInfo);
+
+  LColumnInfo := TScoColumnInfo.Create(
+    6,
+    TScoColumnType.DateTime,
+    'Data',
+    'Date',
+    120,
+    EmptyStr
+  );
+  ComboBoxFilter.Items.Add(LColumnInfo.FieldName);
+  FGrid.ColumnsInfo.Add(LColumnInfo);
+
+  LColumnInfo := TScoColumnInfo.Create(
+    6,
+    TScoColumnType.Currency,
+    'Valor',
+    'Value',
+    100,
     EmptyStr
   );
   ComboBoxFilter.Items.Add(LColumnInfo.FieldName);
